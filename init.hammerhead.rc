@@ -217,6 +217,7 @@ on post-fs-data
     write /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_freq 1190400
     write /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_load 60
     write /sys/devices/system/cpu/cpufreq/interactive/sync_freq 1036800
+    write /sys/class/devfreq/qcom,cpubw.30/governor "cpubw_hwmon"
     write /sys/module/cpu_boost/parameters/boost_ms 20
     write /sys/module/cpu_boost/parameters/sync_threshold 1036800
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
