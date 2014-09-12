@@ -233,7 +233,7 @@ on post-fs-data
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 300000
     chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-    # write /sys/module/msm_thermal/core_control/enabled 1
+    write /sys/module/msm_thermal/core_control/enabled 1
     chown root.system /sys/devices/system/cpu/mfreq
     chmod 220 /sys/devices/system/cpu/mfreq
     chown system system /sys/devices/system/cpu/cpu1/online
@@ -483,15 +483,15 @@ service ssr_ramdump /system/bin/subsystem_ramdump -m -t emmc
     user root
     group root
 
-# service thermal-engine /system/bin/thermal-engine-hh
-#   class main
-#   user root
-#   group root
+service thermal-engine /system/bin/thermal-engine
+    class main
+    user root
+    group radio system
 
 service audiod /system/bin/audiod
-   class late_start
-   user system
-   group system
+    class late_start
+    user system
+    group system
 
 service vss_init /vendor/bin/vss_init
     class late_start
