@@ -504,6 +504,15 @@ service time_daemon /system/bin/time_daemon
     user root
     group root
 
+service ppd /system/bin/mm-pp-daemon
+    class late_start
+    user system
+    socket pps stream 0660 system system
+    group system graphics
+
+on property:init.svc.surfaceflinger=stopped
+    stop ppd
+
 service qrngd /system/bin/qrngd -f
     class main
     user root
