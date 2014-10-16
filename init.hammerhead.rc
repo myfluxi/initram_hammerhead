@@ -497,6 +497,11 @@ service audiod /system/bin/audiod
    user system
    group system
 
+service adsprpcd /system/bin/adsprpcd
+   class main
+   user media
+   group media
+
 service vss_init /vendor/bin/vss_init
     class late_start
     user root
