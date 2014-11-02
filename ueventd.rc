@@ -6,7 +6,7 @@
 /dev/random               0666   root       root
 /dev/urandom              0666   root       root
 # Make HW RNG readable by group system to let EntropyMixer read it.
-/dev/hw_random            0440   root       system
+/dev/hw_random            0660   system     system
 /dev/ashmem               0666   root       root
 /dev/binder               0666   root       root
 
@@ -126,7 +126,6 @@
 /sys/devices/system/cpu/cpufreq interactive/up_threshold_any_cpu_freq      0664    system  system
 /sys/devices/system/cpu/cpufreq interactive/up_threshold_any_cpu_load      0664    system  system
 
-/sys/devices/system/cpu/cpu*	cpufreq/scaling_max_freq      0664    system  system
-/sys/devices/system/cpu/cpu*	cpufreq/scaling_min_freq      0664    system  system
-/sys/devices/system/cpu/cpu*	cpufreq/scaling_governor      0664    system  system
-/sys/devices/system/cpu/cpu*	cpufreq/UV_mV_table      0664    system  system
+/sys/devices/system/cpu/cpu* cpufreq/scaling_max_freq   0664    system  system
+/sys/devices/system/cpu/cpu* cpufreq/scaling_min_freq   0664    system  system
+/sys/devices/system/cpu/cpu* cpufreq/scaling_governor   0664    system  system
